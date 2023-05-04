@@ -1,0 +1,15 @@
+@import '~styles/common/export';
+
+.home-page {
+  padding: 0;
+
+  .section--1 {
+    padding: 0;
+    .row {
+      margin: 0;
+      > div {
+        padding: 0;
+      }
+    }
+  }
+}

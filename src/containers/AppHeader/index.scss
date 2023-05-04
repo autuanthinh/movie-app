@@ -1,0 +1,27 @@
+@import '~styles/common/export';
+
+.app-header {
+  &.navbar {
+    height: 64px;
+    background-color: $colorPrimaryBackground !important;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.160784) !important;
+  }
+
+  > .container {
+    padding: 0;
+    display: block;
+
+    > .row {
+      width: 100%;
+    }
+  }
+
+  .bookmark-button {
+    color: white;
+    
+    > .count {
+      font-weight: bold;
+      color: red;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@import '~styles/common/export';
+
+.scroll-top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  display: none;
+  border-radius: 50%;
+  border: 1px solid $colorGray;
+
+  @include media-breakpoint-up(sm) {
+    bottom: 80px;
+    right: 40px;
+  }
+
+  &.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  svg {
+    width: 50%;
+    color: $colorGray;
+  }
+}
