@@ -1,8 +1,6 @@
-import { ChangeEventHandler, FC, useCallback, useState } from 'react';
-import { Button, Form, InputGroup } from 'react-bootstrap';
+import { FC } from 'react';
+import { Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-// import './index.scss';
 
 const BookMarkButton: FC<{}> = () => {
   const count = 1;

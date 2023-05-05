@@ -14,4 +14,6 @@ const listIcon: ListIcons = [
   // Brand
 ];
 
-export default () => library.add(...listIcon);
+const initIcon = () => library.add(...listIcon);
+
+ export default initIcon;

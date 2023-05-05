@@ -4,15 +4,8 @@ import './index.scss';
 
 function HomePage() {
   return (
-    <Container fluid className="home-page">
-      <Row>
-        <Col md={4}>
-          adu
-        </Col>
-        <Col md={8}>
-          alo
-        </Col>
-      </Row>
+    <Container className="home-page">
+      Home Page
     </Container>
   );
 }

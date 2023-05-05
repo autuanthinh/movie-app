@@ -1,4 +1,6 @@
-export async function fetchMovies({ search, year, type }: { search: string; year: number; type: string }) {
+import { ListMovieBasic, MovieDetails } from '@apptypes/model';
+
+export async function fetchMovies({ search, year, type }: { search: string; year: string; type: string }): Promise<ListMovieBasic> {
   // const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=263d22d8`;
 
   // const response = await fetch(url);
@@ -33,7 +35,7 @@ export async function fetchMovies({ search, year, type }: { search: string; year
   ];
 }
 
-export async function getMovieByID(id: string) {
+export async function getMovieByID(id: string): Promise<MovieDetails> {
   // const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=263d22d8`;
 
   // const response = await fetch(url);
