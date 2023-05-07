@@ -1,30 +1,39 @@
-import { ChangeEventHandler, FC, useCallback, useEffect, useState } from 'react';
-import { Button, Col, Container, Form, InputGroup, Row } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { fetchMovies } from '../../services/movie';
+import { FC } from 'react';
+import { ListMovieBasic, MovieBasic } from '@apptypes/model';
+import { Col, Row } from 'react-bootstrap';
+import MovieCard from '@components/MovieCard';
 
-// import './index.scss';
+import './index.scss';
 
-const MovieList: FC<{}> = () => {
-  const [movies, setSearch] = useState([]);
+export type TopIcons = {
+  key: string;
+  Component: FC<{
+    onClick?: () => void;
+  }>;
+  action?: (movie: MovieBasic) => void;
+}[];
 
-  // useEffect(() => {
-  // }, []);
-
-  // const onChangeSearch: ChangeEventHandler<HTMLInputElement> = useCallback(event => {
-  //   setSearch(event.target.value);
-  // }, []);
-
+const MovieList: FC<{
+  movies: ListMovieBasic;
+  topIcons?: TopIcons;
+}> = ({ movies, topIcons }) => {
   return (
-    <Container className="movie-list">
-      <Row>
-        {movies.map((movie) => {
-          return <Col key={movie}>
-
+    <Row md={3} xs={1} lg={4} className="movie-list g-4">
+      {movies.map(movie => {
+        return (
+          <Col key={movie.imdbID} className="movie-list__item">
+            <MovieCard movie={movie} />
+            {topIcons !== undefined && topIcons.length > 0 ? (
+              <div className="top-icons">
+                {topIcons.map(icon => {
+                  return <icon.Component key={icon.key} onClick={() => icon.action?.(movie)} />;
+                })}
+              </div>
+            ) : null}
           </Col>
-        })}
-      </Row>
-    </Container>
+        );
+      })}
+    </Row>
   );
 };
 

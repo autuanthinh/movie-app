@@ -1,0 +1,34 @@
+@keyframes bookmark-img-animation {
+  0% {
+    -webkit-transform: rotate(0) scale(1) skew(1deg);
+  }
+
+  10% {
+    -webkit-transform: rotate(-5deg) scale(1) skew(1deg);
+  }
+
+  20% {
+    -webkit-transform: rotate(5deg) scale(1) skew(1deg);
+  }
+
+  30% {
+    -webkit-transform: rotate(-5deg) scale(1) skew(1deg);
+  }
+
+  40% {
+    -webkit-transform: rotate(5deg) scale(1) skew(1deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(0) scale(1) skew(1deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(0) scale(1) skew(1deg);
+  }
+}
+
+.bookmark-img-animation {
+  -webkit-animation: bookmark-img-animation 1s infinite ease-in-out;
+  animation: bookmark-img-animation 1.8s infinite ease-in-out;
+}

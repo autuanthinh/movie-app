@@ -1,16 +1,19 @@
 import { FC } from 'react';
-import { Button } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import { selectors } from '@reducers/bookmark';
+
 const BookMarkButton: FC<{}> = () => {
-  const count = 1;
+  const total = useSelector(selectors.bookmarkTotal);
 
   return (
-    <Button className="bookmark-button" variant="info">
+    <NavLink className="bookmark-button btn d-inline-flex align-items-center" to={'/bookmark'}>
       <FontAwesomeIcon icon={['far', 'bookmark']} />
-      <span className="mx-2">Bookmark</span>
-      {count > 0 ? <span className="count">({count})</span> : null}
-    </Button>
+      <span className="bookmark-button__text ms-2">Bookmark ({total})</span>
+    </NavLink>
   );
 };
 

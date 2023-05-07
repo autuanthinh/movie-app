@@ -1,5 +1,3 @@
-import { ListMovieBasic } from '@apptypes/model';
-
 export async function fetchYears(): Promise<string[]> {
   const currentYear = new Date().getFullYear();
   const rangeYear = 40;
@@ -11,9 +9,5 @@ export async function fetchYears(): Promise<string[]> {
 }
 
 export async function fetchMovieType(): Promise<string[]> {
-  return [
-    'movie',
-    'series',
-    'episode',
-  ]
+  return ['movie', 'series'];
 }

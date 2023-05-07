@@ -1,14 +1,55 @@
 @import '~styles/common/export';
 
-.home-page {
-  padding: 0;
+.movie-page {
+  > div {
+    flex-direction: column;
 
-  .section--1 {
-    padding: 0;
-    .row {
-      margin: 0;
-      > div {
-        padding: 0;
+    .image-wrap {
+      display: flex;
+      justify-content: center;
+      border-radius: 5;
+
+      .custom-lazy-load-image {
+        width: 350px;
+      }
+    }
+
+    .details {
+      margin-top: 1rem;
+
+      .title {
+        font-size: 2rem;
+      }
+      .plot {
+        color: #a5a5a5;
+        margin-top: 1rem;
+        line-height: 1.125rem;
+      }
+      .release {
+        color: #a5a5a5;
+        font-weight: bold;
+      }
+      .play-trailer-btn {
+        background: #00ce79;
+        border: none;
+        color: black;
+        font-size: 1.125rem;
+        font-weight: bold;
+        margin-top: 12px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    > div {
+      flex-direction: row;
+      gap: 3rem !important;
+
+      .details {
+        margin-top: 0;
       }
     }
   }

@@ -11,7 +11,10 @@
         "@apptypes/*": ["./types/*"],
         "@store/*": ["./store/*"],
         "@services/*": ["./services/*"],
-        "@reducers/*": ["./reducers/*"]
+        "@reducers/*": ["./reducers/*"],
+        "@utils/*": ["./utils/*"],
+        "@constants/*": ["./constants/*"],
+        "@helpers/*": ["./helpers/*"]
       }
     }
   }

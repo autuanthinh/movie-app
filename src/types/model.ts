@@ -40,3 +40,10 @@ export type MovieDetails = {
   Website: string;
   Response: string;
 };
+
+export type Pagination = {
+  totalResults: number;
+  page: number;
+  pages: number;
+  limit: number;
+};

@@ -1,0 +1,15 @@
+.search-movie-box-wrap {
+  .dropdown-toggle {
+    padding: 0;
+    background-color: unset;
+    border: unset;
+    width: 100%;
+
+    &::after {
+      display: none;
+    }
+  }
+  .dropdown-menu {
+    width: 100%;
+  }
+}

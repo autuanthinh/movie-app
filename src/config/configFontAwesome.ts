@@ -7,13 +7,17 @@ type ListIcons = Parameters<typeof library.add>;
 const listIcon: ListIcons = [
   // Solid
   fas.faMagnifyingGlass,
+  fas.faCheck,
+  fas.faPlus,
+  fas.faBookmark,
+  fas.faTrash,
 
   // Regular
-  far.faBookmark
+  far.faBookmark,
 
   // Brand
 ];
 
 const initIcon = () => library.add(...listIcon);
 
- export default initIcon;
+export default initIcon;

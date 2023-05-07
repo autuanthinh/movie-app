@@ -1,5 +1,6 @@
 import { ChangeEventHandler, FC, useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { Col, Form, Row, FloatingLabel } from 'react-bootstrap';
 
 import * as selectors from '@reducers/filter/selectors';
@@ -13,16 +14,15 @@ const FilterBar: FC<{}> = () => {
   const yearOptions = useSelector(selectors.yearOptionsSelector);
   const typeOptions = useSelector(selectors.typeOptionsSelector);
 
-  const search = useSelector(selectors.searchSelector);
   const year = useSelector(selectors.yearSelector);
   const type = useSelector(selectors.typeSelector);
 
   const changeYear: ChangeEventHandler<HTMLSelectElement> = useCallback(e => {
-    dispatch(actions.changeYear(e.target.value));
+    dispatch(actions.changeFilter({ year: e.target.value }));
   }, []);
 
   const changeType: ChangeEventHandler<HTMLSelectElement> = useCallback(e => {
-    dispatch(actions.changeType(e.target.value));
+    dispatch(actions.changeFilter({ type: e.target.value }));
   }, []);
 
   useEffect(() => {
@@ -34,28 +34,27 @@ const FilterBar: FC<{}> = () => {
     }
   }, []);
 
-  // Fetch Movie
-  useEffect(() => {
-    dispatch(actions.fetchMovie());
-  }, [search, year, type]);
-
   return (
-    <Row className="py-2">
+    <Row className="filter-bar pt-4">
       <Col md="6">
         <FloatingLabel controlId="floatingSelect" label="Year">
-          <Form.Select aria-label="Floating label year select" onChange={changeYear}>
+          <Form.Select aria-label="Floating label year select" value={year} onChange={changeYear}>
             {yearOptions.map(item => {
-              return <option key={item}>{item ? item : 'All'}</option>;
+              return (
+                <option key={item} value={item}>
+                  {item ? item : 'All'}
+                </option>
+              );
             })}
           </Form.Select>
         </FloatingLabel>
       </Col>
       <Col md="6">
         <FloatingLabel controlId="floatingSelect" label="Type">
-          <Form.Select aria-label="Floating label type select" onChange={changeType}>
+          <Form.Select aria-label="Floating label type select" value={type} onChange={changeType}>
             {typeOptions.map(item => {
               return (
-                <option key={item} className="text-capitalize">
+                <option key={item} value={item} className="text-capitalize">
                   {item ? item : 'All'}
                 </option>
               );

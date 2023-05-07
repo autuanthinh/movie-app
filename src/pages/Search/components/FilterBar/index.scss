@@ -1,0 +1,12 @@
+@import '~styles/common/export';
+
+.filter-bar {
+  .form-floating {
+    label {
+      color: $colorGray;
+    }
+    select {
+      cursor: pointer;
+    }
+  }
+}

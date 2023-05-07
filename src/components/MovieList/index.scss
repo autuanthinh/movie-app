@@ -1,5 +1,37 @@
 @import '~styles/common/export';
 
 .movie-list {
-  
+  .movie-card-wrap {
+    .nav-link {
+      height: 100%;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    .top-icons {
+      position: absolute;
+      right: 1.35rem;
+      top: 0.35rem;
+
+      > * {
+        margin-right: 1rem;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      > svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        cursor: pointer;
+
+        &:hover {
+          color: red;
+        }
+      }
+    }
+  }
 }

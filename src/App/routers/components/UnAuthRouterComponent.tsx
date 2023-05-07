@@ -12,7 +12,7 @@ const UnAuthRouterComponent: FC<{
   const { nodeRef } = routes.find(route => route.path === location.pathname) ?? {};
 
   return (
-    <div className="pages pages--auth">
+    <div className="pages pages--unauth">
       <SwitchTransition>
         <CSSTransition key={location.pathname} nodeRef={nodeRef} timeout={300} classNames="page" unmountOnExit>
           {() => (
