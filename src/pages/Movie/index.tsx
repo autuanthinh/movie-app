@@ -5,10 +5,11 @@ import * as movieAPI from '@services/movie';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { Container, Spinner } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import BookmarkToggle from '@components/BookmarkToggle';
 import Genre from '@components/Genre';
 import CustomLazyLoadImage from '@components/CustomLazyLoadImage';
+import Loading from '@components/Loading';
 import ImageSkeleton from '@components/skeleton/ImageSkeleton';
 
 import { actions as bookmarkActions, selectors as bookMarkSelectors } from '@reducers/bookmark';
@@ -57,11 +58,7 @@ function HomePage() {
   );
 
   return loading ? (
-    <div className="d-flex justify-content-center my-3">
-      <Spinner animation="border" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </Spinner>
-    </div>
+    <Loading />
   ) : !movieInfo ? (
     <h2 className="text-center my-3">Movie not found!</h2>
   ) : (

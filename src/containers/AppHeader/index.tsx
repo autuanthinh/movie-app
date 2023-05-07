@@ -10,15 +10,15 @@ const Header = () => {
     <Navbar bg="dark" variant="dark" className="app-header">
       <Container>
         <Row>
-          <Col md={3} sm={3} xs={6} className="col-branch d-flex align-items-start">
+          <Col md={3} xs={6} className="col-branch d-flex align-items-center">
             <Navbar.Brand as={NavLink} to="/">
               BEST MOVIE
             </Navbar.Brand>
           </Col>
-          <Col md={6} sm={6} xs={12} className="col-search">
+          <Col md={6} xs={12} className="col-search">
             <SearchBox />
           </Col>
-          <Col md={3} sm={3} xs={6} className="col-bookmark d-flex justify-content-end">
+          <Col md={3} xs={6} className="col-bookmark d-flex justify-content-end">
             <BookMarkButton />
           </Col>
         </Row>

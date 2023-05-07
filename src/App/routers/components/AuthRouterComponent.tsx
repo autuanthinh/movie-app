@@ -1,11 +1,12 @@
 import { FC, Suspense } from 'react';
 import { useLocation, useOutlet } from 'react-router-dom';
+
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
-import AppHeader from 'containers/AppHeader';
 import ScrollTopButton from 'components/ScrollTopButton';
+import AppHeader from 'containers/AppHeader';
+import Loading from 'components/Loading';
 
 import { RoutesType } from '../routers';
-import { Spinner } from 'react-bootstrap';
 
 const AuthRouterComponent: FC<{
   routes: RoutesType;
@@ -21,17 +22,7 @@ const AuthRouterComponent: FC<{
         <CSSTransition key={location.pathname} nodeRef={nodeRef} timeout={300} classNames="page" unmountOnExit>
           {() => (
             <div ref={nodeRef as any} className="page page--auth">
-              <Suspense
-                fallback={
-                  <div className="d-flex justify-content-center my-3">
-                    <Spinner animation="border" role="status">
-                      <span className="visually-hidden">Loading...</span>
-                    </Spinner>
-                  </div>
-                }
-              >
-                {currentOutlet}
-              </Suspense>
+              <Suspense fallback={<Loading />}>{currentOutlet}</Suspense>
             </div>
           )}
         </CSSTransition>

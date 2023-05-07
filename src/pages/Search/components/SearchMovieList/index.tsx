@@ -3,10 +3,10 @@ import _ from 'lodash';
 import * as movieAPI from '@services/movie';
 import * as Utils from '@utils/index';
 import { useSelector } from 'react-redux';
-import MovieList from '@components/MovieList';
 import { ListMovieBasic, Pagination } from '@apptypes/model';
 
 import { Button, Col, Row, Spinner } from 'react-bootstrap';
+import MovieList from '@components/MovieList';
 
 import * as selectors from '@reducers/filter/selectors';
 
