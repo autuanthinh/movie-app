@@ -13,7 +13,6 @@
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.2.3",
     "classnames": "^2.3.2",
-    "framer-motion": "^10.12.8",
     "lodash": "^4.17.21",
     "query-string": "^8.1.0",
     "react": "^18.2.0",
@@ -37,7 +36,9 @@
     "start": "craco start",
     "build": "craco build",
     "eject": "craco eject",
-    "test": "craco test"
+    "test": "react-scripts test",
+    "test:coverage": "yarn test -- --coverage",
+    "view:coverage": "./coverage/lcov-report/index.html"
   },
   "eslintConfig": {
     "extends": [
@@ -70,11 +71,56 @@
     "@types/react": "^18.2.2",
     "@types/react-dom": "^18.2.3",
     "@types/react-lazy-load-image-component": "^1.5.3",
-    "craco-alias": "^3.0.1"
+    "@types/react-test-renderer": "^18.0.0",
+    "craco-alias": "^3.0.1",
+    "react-test-renderer": "^18.2.0"
   },
   "engines": {
     "npm": "please-use-yarn",
     "yarn": ">= 1.22.0",
     "node": ">=18.0.0 <19.0.0"
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!swiper)/"
+    ],
+    "moduleNameMapper": {
+      "^@components/(.*)": "<rootDir>/src/components/$1",
+      "^@containers/(.*)": "<rootDir>/src/containers/$1",
+      "^@pages/(.*)": "<rootDir>/src/pages/$1",
+      "^@context/(.*)": "<rootDir>/src/context/$1",
+      "^@assets/(.*)": "<rootDir>/src/assets/$1",
+      "^@styles/(.*)": "<rootDir>/src/styles/$1",
+      "^@apptypes/(.*)": "<rootDir>/src/apptypes/$1",
+      "^@store/(.*)": "<rootDir>/src/store/$1",
+      "^@services/(.*)": "<rootDir>/src/services/$1",
+      "^@reducers/(.*)": "<rootDir>/src/reducers/$1",
+      "^@utils/(.*)": "<rootDir>/src/utils/$1",
+      "^@constants/(.*)": "<rootDir>/src/constants/$1",
+      "^@helpers/(.*)": "<rootDir>/src/helpers/$1",
+      "^@datas/(.*)": "<rootDir>/src/datas/$1",
+      "^@config/(.*)": "<rootDir>/src/config/$1",
+      "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js"
+    },
+    "collectCoverageFrom": [
+      "<rootDir>/src/**/*.{ts,tsx}",
+      "!<rootDir>/node_modules/"
+    ],
+    "coverageReporters": [
+      "text",
+      "lcov"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 50,
+        "functions": 50,
+        "lines": 50,
+        "statements": 50
+      },
+      "./src/components/": {
+        "branches": 50,
+        "statements": 50
+      }
+    }
   }
 }

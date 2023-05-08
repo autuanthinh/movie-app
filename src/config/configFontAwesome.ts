@@ -11,6 +11,8 @@ const listIcon: ListIcons = [
   fas.faPlus,
   fas.faBookmark,
   fas.faTrash,
+  fas.faChevronUp,
+  fas.faVideoSlash,
 
   // Regular
   far.faBookmark,

@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from 'react';
 import { ListMovieBasic } from '@apptypes/model';
 import * as movieAPI from '@services/movie';
 
-import CustomSwiper from '../CustomSwiper';
+import CustomSwiper from '@components/CustomSwiper';
 
 import './index.scss';
 
@@ -10,8 +10,9 @@ const VideoTypeSwiper: FC<{
   title: string;
   type: string;
   search: string;
-}> = ({ title, type, search }) => {
-  const [movies, setMovies] = useState<ListMovieBasic>([]);
+  defaultMovies?: ListMovieBasic;
+}> = ({ title, type, search, defaultMovies = [] }) => {
+  const [movies, setMovies] = useState<ListMovieBasic>(defaultMovies);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {

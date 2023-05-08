@@ -3,11 +3,9 @@
 .movie-card-wrap {
   height: 100%;
 
-  .movie-card {
+  .base-moveie-card {
     width: 100%;
     min-height: 100%;
-    background: #161616;
-    border-radius: 6;
     position: relative;
     transition: all 0.3s ease-in-out;
 

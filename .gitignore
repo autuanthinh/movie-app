@@ -11,6 +11,9 @@
 # production
 /build
 
+# testing snapshots
+**/__tests__/__snapshots__
+
 # misc
 .DS_Store
 .env.local

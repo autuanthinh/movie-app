@@ -1,6 +1,8 @@
 import { FC } from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { IMAGE_UNAVAILABLE_PLACEHOLDER, RATIO_HEIGHT_DEFAULT } from '@constants/index';
+
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import RatioFrame from '@components/RatioFrame';
 
 import './index.scss';
 
@@ -9,7 +11,7 @@ const CustomLazyLoadImage: FC<{
   ratioHeight?: number;
 }> = ({ urlImage, ratioHeight = RATIO_HEIGHT_DEFAULT }) => {
   return (
-    <div className="custom-lazy-load-image" style={{ paddingTop: `calc(${ratioHeight} * 100%)` }}>
+    <RatioFrame ratioHeight={ratioHeight} className="custom-lazy-load-image">
       <LazyLoadImage
         src={urlImage ? urlImage : IMAGE_UNAVAILABLE_PLACEHOLDER}
         width={'100%'}
@@ -18,7 +20,7 @@ const CustomLazyLoadImage: FC<{
         effect="blur"
         style={{ objectFit: 'cover' }}
       />
-    </div>
+    </RatioFrame>
   );
 };
 

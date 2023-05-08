@@ -14,7 +14,9 @@
         "@reducers/*": ["./reducers/*"],
         "@utils/*": ["./utils/*"],
         "@constants/*": ["./constants/*"],
-        "@helpers/*": ["./helpers/*"]
+        "@helpers/*": ["./helpers/*"],
+        "@datas/*": ["./datas/*"],
+        "@config/*": ["./config/*"]
       }
     }
   }

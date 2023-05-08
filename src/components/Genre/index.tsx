@@ -1,29 +1,20 @@
-import { FC } from 'react';
-import { motion } from 'framer-motion';
+import React, { FC } from 'react';
 import { Badge } from 'react-bootstrap';
-import { item } from '@helpers/framerMotion';
 
 const Genre: FC<{
   title: string;
   active?: boolean;
 }> = ({ title, active = false }) => {
   return (
-    <motion.h3
-      whileTap={{
-        scale: 0.8,
+    <Badge
+      id="badge"
+      style={{
+        cursor: 'pointer',
       }}
-      variants={item}
+      bg={active ? 'primary' : 'dark'}
     >
-      <Badge
-        id="badge"
-        style={{
-          cursor: 'pointer',
-        }}
-        bg={active ? 'primary' : 'dark'}
-      >
-        {title}
-      </Badge>
-    </motion.h3>
+      {title}
+    </Badge>
   );
 };
 
