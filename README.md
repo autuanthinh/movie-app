@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - Build UI by react-boostrap library
 - Using SCSS to implement style
-- Responsive website ~95%
+- Responsive all page (Mobile First)
 - Seperate Auth and Un-Auth
 - Usintg typescript to implement
 - Using craro to reconfig webpack
