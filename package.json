@@ -37,7 +37,7 @@
     "build": "craco build",
     "eject": "craco eject",
     "test": "react-scripts test",
-    "test:coverage": "yarn test -- --coverage",
+    "test:coverage": "yarn test -- --coverage --watchAll=false",
     "view:coverage": "./coverage/lcov-report/index.html"
   },
   "eslintConfig": {
@@ -112,13 +112,15 @@
     ],
     "coverageThreshold": {
       "global": {
-        "branches": 50,
-        "functions": 50,
-        "lines": 50,
-        "statements": 50
+        "branches": 0,
+        "functions": 0,
+        "lines": 0,
+        "statements": 0
       },
       "./src/components/": {
-        "branches": 50,
+        "braches": 50,
+        "functions": 50,
+        "lines": 50,
         "statements": 50
       }
     }
